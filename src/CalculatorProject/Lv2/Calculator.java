@@ -46,7 +46,7 @@ public class Calculator {
     }
 
     public void removeResult() {
-        /* 구현 */
+        results.remove(0);
     }
 }
 
