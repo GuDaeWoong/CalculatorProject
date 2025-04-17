@@ -1,20 +1,21 @@
 package CalculatorProject.Lv2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
     // 연산 결과를 저장하는 컬렉션 타입 필드 (동적 배열)
     // 외부에서 results 필드에 직접 접근하는 것을 막기 위해 private으로 설정
-    private ArrayList<Integer> results = new ArrayList<>();
+    private List<Integer> results = new ArrayList<>();
 
     // 간접 접근을 통해 필드에 접근하여 가져올 수 있도록 구현합니다. (Getter 메서드)
-    public ArrayList<Integer> getResults() {
+    public List<Integer> getResults() {
         return this.results;
     }
 
     // 간접 접근을 통해 필드에 접근하여 수정할 수 있도록 구현합니다. (Setter 메서드)
-    public void setResults(ArrayList<Integer> results) {
-        // if 문을 사용해서 results형식의 값이 들어올수있게 보안? 개연차원에서
+    public void setResults(List<Integer> results) {
+        // if 문을 사용해서 results형식의 값이 들어올수있게 보안? 개연차원에서 해주는 것이 좋을것같음
         this.results = results;
     }
 

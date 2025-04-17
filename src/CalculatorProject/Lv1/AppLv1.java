@@ -42,6 +42,7 @@ public class AppLv1 {
                 }
             } else {
                 System.out.println("유효하지 않은 연산자입니다.");
+                continue;
             }
             System.out.println("결과: " + result);
 
