@@ -7,6 +7,7 @@ public class AppLv1 {
 
         Scanner sc = new Scanner(System.in);
 
+        // 무한루트
         while (true) {
             // 첫 번째 숫자 입력
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -15,7 +16,7 @@ public class AppLv1 {
 
             // 사칙 연산 입력
             System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
-            String operationInput = sc.next();
+            char operationInput = sc.next().charAt(0);
 
             System.out.print("두 번째 숫자를 입력하세요: ");
             int secondNum = sc.nextInt();
@@ -24,13 +25,13 @@ public class AppLv1 {
             int result = 0;
 
             // 사칙연산 확인 & 연산수행
-            if (operationInput.equals("+")) {
+            if (operationInput == '+') {
                 result = firstNum + secondNum;
-            } else if (operationInput.equals("-")) {
+            } else if (operationInput == '-') {
                 result = firstNum - secondNum;
-            } else if (operationInput.equals("*")) {
+            } else if (operationInput == '*') {
                 result = firstNum * secondNum;
-            } else if (operationInput.equals("/")) {
+            } else if (operationInput == '/') {
                 if (secondNum == 0) {
                     System.out.println("/ 연산에서 분모에 0이 입력될 수 없습니다.");
                     // 나머지 코드를 건너뛰고 다음 반복으로 이동

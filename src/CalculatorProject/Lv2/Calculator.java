@@ -18,15 +18,15 @@ public class Calculator {
         this.results = results;
     }
 
-    public Integer calculate(int firstNum, int secondNum, String operator) {
+    public Integer calculate(int firstNum, int secondNum, char operationInput) {
         int result = 0;
-        if (operator.equals("+")) {
+        if (operationInput == '+') {
             result = firstNum + secondNum;
-        } else if (operator.equals("-")) {
+        } else if (operationInput == '-') {
             result = firstNum - secondNum;
-        } else if (operator.equals("*")) {
+        } else if (operationInput == '*') {
             result = firstNum * secondNum;
-        } else if (operator.equals("/")) {
+        } else if (operationInput == '/') {
             if (secondNum == 0) {
                 System.out.println("/ 연산에서 분모에 0이 입력될 수 없습니다.");
                 // return 에 null을 줌으로써 함수가 종료된다
