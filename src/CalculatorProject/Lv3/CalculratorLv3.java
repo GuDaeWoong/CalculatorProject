@@ -24,27 +24,31 @@ public class CalculratorLv3<T extends Number> {
     // 기능
     public Double calculate(T firstNum, T secondNum, String operationInput) {
         Double result = null;
+
         if (Objects.equals(operationInput, OperatorType.PLUS.getOperat())) {
             result = firstNum.doubleValue() + secondNum.doubleValue();
         } else if (Objects.equals(operationInput, OperatorType.MINUS.getOperat())) {
             result = firstNum.doubleValue() - secondNum.doubleValue();
         } else if (Objects.equals(operationInput, OperatorType.TIMES.getOperat())) {
             result = firstNum.doubleValue() * secondNum.doubleValue();
-        } else {
+        } else if (Objects.equals(operationInput, OperatorType.DIV.getOperat())){
             if (secondNum.doubleValue() == 0) {
                 System.out.println("/ 연산에서 분모에 0이 입력될 수 없습니다.");
                 // return 에 null을 줌으로써 함수가 종료된다
                 return null;
             } else {
-                System.out.println("유효하지 않은 연산자입니다.");
-                // return 에 null을 반환함으로써 함수가 종료된다
-                return null;
+                result = firstNum.doubleValue() * secondNum.doubleValue();
             }
-        }
+        } else {
+            System.out.println("유효하지 않은 연산자입니다.");
+            // return 에 null을 반환함으로써 함수가 종료된다
+            return null;
+            }
         // 연산 결과를 컬렉션에 저장
         results.add(result);
         return result;
     }
+
 
     public String isType(String num) {
         if (isInt(num)) {
@@ -74,6 +78,5 @@ public class CalculratorLv3<T extends Number> {
         }
     }
 }
-
 
 
