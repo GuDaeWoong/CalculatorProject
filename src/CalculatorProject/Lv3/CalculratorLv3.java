@@ -1,3 +1,4 @@
+
 package CalculatorProject.Lv3;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class CalculratorLv3<T extends Number> {
 
     // 기능
     public Double calculate(T firstNum, T secondNum, String operationInput) {
+
         Double result = null;
 
         if (Objects.equals(operationInput, OperatorType.PLUS.getOperat())) {
@@ -49,6 +51,13 @@ public class CalculratorLv3<T extends Number> {
         return result;
     }
 
+    public List<String> scan(List<Double> _list, Double result_new) {
+        return _list.stream()
+                .filter(num -> num > result_new)
+                // .map(String ::valueOf)
+                .map(num -> String.valueOf(num))
+                .toList();
+    }
 
     public String isType(String num) {
         if (isInt(num)) {
@@ -78,5 +87,3 @@ public class CalculratorLv3<T extends Number> {
         }
     }
 }
-
-
