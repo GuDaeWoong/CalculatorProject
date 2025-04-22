@@ -45,6 +45,7 @@ public class AppLv3 {
                 breakBoolean=false;
             }
         }
+        // 3-3 10.1 -> 새로 넣을값
         List<String> newList = calculratorInt.scan(calculratorInt.getResults(), 10.1);
     }
 }
@@ -52,8 +53,7 @@ public class AppLv3 {
 
 
 
-//
-//
+// 기존 코드 새로운 코드에는 breakBoolean 으로 반복문을 제어 해줬다
 //package CalculatorProject.Lv3;
 //
 //import java.util.List;
@@ -65,7 +65,6 @@ public class AppLv3 {
 //        CalculratorLv3<Integer> calculratorInt = new CalculratorLv3<Integer>();
 //        CalculratorLv3<Double> calculratorDouble = new CalculratorLv3<Double>();
 //
-//        boolean test=true;
 //        while (true) {
 //            // 첫 번째 숫자 입력
 //            System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -105,8 +104,6 @@ public class AppLv3 {
 //        List<String> newList = calculratorInt.scan(calculratorInt.getResults(), 10.1);
 //    }
 //}
-//
-//
-//
+
 
 

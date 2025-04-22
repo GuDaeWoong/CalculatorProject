@@ -36,7 +36,6 @@ public class CalculratorLv3<T extends Number> {
         } else if (Objects.equals(operationInput, OperatorType.DIV.getOperat())){
             if (secondNum.doubleValue() == 0) {
                 System.out.println("/ 연산에서 분모에 0이 입력될 수 없습니다.");
-                // return 에 null을 줌으로써 함수가 종료된다
                 return null;
             } else {
                 result = firstNum.doubleValue() * secondNum.doubleValue();
@@ -51,6 +50,8 @@ public class CalculratorLv3<T extends Number> {
         return result;
     }
 
+    // 3-3 기존 리스트를 scan에 넣고 result_new 새로 나온 값을
+    // 입력하면 넣은 값보다 큰값들을 반환하는 메서드
     public List<String> scan(List<Double> _list, Double result_new) {
         return _list.stream()
                 .filter(num -> num > result_new)
