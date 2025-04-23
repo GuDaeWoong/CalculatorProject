@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+// <T extends Number> 매개변수를 Number로 제한
 public class CalculratorLv3<T extends Number> {
 
     // 연산 결과를 저장하는 컬렉션 타입 필드 (동적 배열)
@@ -22,11 +23,11 @@ public class CalculratorLv3<T extends Number> {
         this.results = results;
     }
 
-    // 기능
-    public Double calculate(T firstNum, T secondNum, String operationInput) {
+    // 제네릭을 이용하여 첫번째숫자와 두번째숫자의 매개변수를 숫자형으로 제한하였다
+    public Double calculate(T firstNum, T secondNum,String operationInput) {
 
         Double result = null;
-
+        //int형 또는 double형이든 모두 더블형으로 변환하여 계산 하였다
         if (Objects.equals(operationInput, OperatorType.PLUS.getOperat())) {
             result = firstNum.doubleValue() + secondNum.doubleValue();
         } else if (Objects.equals(operationInput, OperatorType.MINUS.getOperat())) {
@@ -42,7 +43,7 @@ public class CalculratorLv3<T extends Number> {
             }
         } else {
             System.out.println("유효하지 않은 연산자입니다.");
-            // return 에 null을 반환함으로써 함수가 종료된다
+            // return 에 null을 반환함으로써 함수가 종료
             return null;
             }
         // 연산 결과를 컬렉션에 저장
@@ -51,7 +52,7 @@ public class CalculratorLv3<T extends Number> {
     }
 
     // 3-3 기존 리스트를 scan에 넣고 result_new 새로 나온 값을
-    // 입력하면 넣은 값보다 큰값들을 반환하는 메서드
+    // 입력하면 넣은 값보다 큰값들을 반환하는 메서드를 stream & 람다를 이용하여 작성
     public List<String> scan(List<Double> _list, Double result_new) {
         return _list.stream()
                 .filter(num -> num > result_new)
@@ -60,6 +61,7 @@ public class CalculratorLv3<T extends Number> {
                 .toList();
     }
 
+    // App 에서 int형 double형 체크하기위한 메서드
     public String isType(String num) {
         if (isInt(num)) {
             return "int";
